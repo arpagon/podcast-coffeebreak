@@ -7,7 +7,7 @@ script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 
 usage() {
   cat << EOF # remove the space between << and EOF, this is due to web plugin issue
-Usage: $(basename "${BASH_SOURCE[0]}") [-h] [-v] -u https://podcasts.google.com/feed/aHR0cDovL2ZlZWRzLmZlZWRidXJuZXIuY29tL1BvZGNhc3RDb2ZmZWVCcmVhaw?sa=X&ved=0CD4Q9sEGahcKEwjw1Zv4i8_6AhUAAAAAHQAAAAAQEw
+Usage: $(basename "${BASH_SOURCE[0]}") [-h] [-v] -u https://podcasts.google.com/feed/aHR0cDovL2ZlZWRzLmZlZWRidXJuZXIuY29tL1BvZGNhc3RDb2ZmZWVCcmVhaw?sa=X&ved=0CD4Q9sEGahcKEwjw1Zv4i8_6AhUAAAAAHQAAAAAQEw -d /content/podcast/
 
 Download all content from Google podcast via (youtube-dl)
 
@@ -15,7 +15,8 @@ Available options:
 
 -h, --help      Print this help and exit
 -v, --verbose   Print script debug info
--u, --url      URL of podcast on google podcast
+-u, --url       URL of podcast on google podcast
+-d, --dir      DIR to storage podcast
 EOF
   exit
 }
@@ -55,6 +56,10 @@ parse_params() {
     -v | --verbose) set -x ;;
     --no-color) NO_COLOR=1 ;;
     #-f | --flag) flag=1 ;; # example flag
+    -d | --dir)
+      dir="${2-}"
+      shift
+      ;;
     -u | --url) # example named parameter
       url="${2-}"
       shift
@@ -76,8 +81,8 @@ parse_params() {
 
 download_podcast() {
     echo ""
-    msg "Dowloading ${url}..."
-    youtube-dl -x --audio-format mp3 -ciw -o '%(playlist_index)s_%(title)s.%(ext)s' -v --playlist-reverse "${url}"
+    msg "Dowloading ${url}... to dir ${dir}"
+    youtube-dl -x --audio-format mp3 -ciw -o ${dir}'/%(playlist_index)s.%(ext)s' -v --playlist-reverse "${url}"
 }
 
 parse_params "$@"
