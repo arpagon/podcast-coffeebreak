@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - ffmpeg
-  - python=3.10
+  - python
   - youtube-dl
   - pip:
     - git+https://github.com/openai/whisper.git 
