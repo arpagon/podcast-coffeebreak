@@ -6,5 +6,8 @@ dependencies:
   - python
   - youtube-dl
   - pip
+  - ipython
+  - jupyter
+  - google-colab
   - pip:
     - git+https://github.com/openai/whisper.git 
