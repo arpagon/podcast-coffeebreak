@@ -10,6 +10,5 @@ dependencies:
   - jupyter
   - google-colab
   - pandas
-  - mutagen
   - pip:
     - git+https://github.com/openai/whisper.git 
