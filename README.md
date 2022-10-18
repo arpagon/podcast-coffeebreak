@@ -1,3 +1,5 @@
+<a href=\"https://colab.research.google.com/github/arpagon/podcast-coffeebreak/blob/main/main.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>
+
 # podcast-coffeebreak
 Integrated analytics and stats search for Podcast: Coffee Break: Señal y Ruido
 
