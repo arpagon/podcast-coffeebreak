@@ -27,7 +27,7 @@ conda activate OpenAIWhisper
 
 - podcast size
     - Bytes
-    - Seconds
+    - Seconds (mp3info -p "%S" 001.mp3)
     - Episodes
 - Histogram
     - Duración
