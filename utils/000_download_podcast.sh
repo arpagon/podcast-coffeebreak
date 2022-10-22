@@ -82,7 +82,7 @@ parse_params() {
 download_podcast() {
     echo ""
     msg "Dowloading ${url}... to dir ${dir}"
-    youtube-dl -x --audio-format mp3 -ciw -o ${dir}'/%(playlist_index)s.%(ext)s' -v --playlist-reverse "${url}"
+    youtube-dl -x --audio-format mp3 --write-info-json -ciw -o ${dir}'/%(playlist_index)s.%(ext)s' -v --playlist-reverse "${url}"
 }
 
 parse_params "$@"
