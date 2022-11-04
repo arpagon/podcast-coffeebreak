@@ -12,3 +12,4 @@ dependencies:
   - pandas
   - pip:
     - git+https://github.com/openai/whisper.git 
+    - supabase

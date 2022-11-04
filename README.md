@@ -14,13 +14,14 @@ conda activate OpenAIWhisper
 
 # TODO
 
-- [ ] Transcript (https://github.com/openai/whisper)
+- [x] Transcript (https://github.com/openai/whisper)
 - [ ] https://huggingface.co/pyannote/speaker-diarization
 - [ ] use https://github.com/ytdl-org/youtube-dl/blob/5208ae92fc3e2916cdccae45c6b9a516be3d5796/youtube_dl/extractor/googlepodcasts.py
-- [ ] use google drive in colab for fast bootstrapping
-    - [ ] models
-    - [ ] audios
-    - [ ] transcipts
+- [x] use google drive in colab for fast bootstrapping
+    - [-] models
+    - [x] audios
+    - [x] transcipts
+- [ ] Supabase
 
 
 # Descrivtive statistics whiout transcribing
